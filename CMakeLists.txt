@@ -6,7 +6,7 @@ set(CMAKE_C_STANDARD 17)
 project(WaveshareDrives)
 
 file(GLOB SOURCES 
-    "lib/Config/*.c"
+    "lib/Config/Dev_Config.c"
     "lib/Driver/*.c"
     "lib/EPD/*.c"
     "lib/Fonts/*.c"
@@ -14,21 +14,17 @@ file(GLOB SOURCES
 )
 
 file(GLOB HEADERS
-    "lib/Config/*.h"
+    "lib/Config/Debug.h"
+    "lib/Config/Dev_Config.h"
     "lib/Driver/*.h"
     "lib/EPD/*.h"
     "lib/Fonts/*.h"
     "lib/GUI/*.h"
 )
 
-# find_package(PkgConfig REQUIRED)
-# pkg_check_modules(LGPIO REQUIRED IMPORTED_TARGET lgpio)
+add_definitions(-DUSE_LGPIO_LIB)
 
 add_library(${PROJECT_NAME} STATIC ${SOURCES})
-
-# target_link_libraries(${PROJECT_NAME}
-#     PkgConfig::LGPIO
-# )
 
 target_include_directories(${PROJECT_NAME} PUBLIC 
     "lib/Config"
