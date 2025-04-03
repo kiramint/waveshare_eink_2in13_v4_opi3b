@@ -21,15 +21,42 @@ int SPI_Handle;
 int IIC_Handle;
 
 // Kira
+/**
+ * Get handle of different gpio chip.
+ */
 int getGpioHandle(int Pin)
 {
     if (Pin >= 128)
     {
         return GPIO_Handle_128_158;
     }
+    else if (Pin >= 96)
+    {
+        return GPIO_Handle_96_127;
+    }
     else
     {
-        return GPIO_Handle_128_158;
+        Debug("Get err pin: %d\r\n", Pin);
+        exit(1);
+    }
+}
+/**
+ * Translate system gpio pin into gpio chip inner pin.
+ */
+int getGpioInternalPin(int Pin)
+{
+    if (Pin >= 128)
+    {
+        return Pin - 128;
+    }
+    else if (Pin >= 96)
+    {
+        return Pin - 96;
+    }
+    else
+    {
+        Debug("Get err pin: %d\r\n", Pin);
+        exit(1);
     }
 }
 #endif
@@ -54,7 +81,7 @@ void DEV_Digital_Write(UWORD Pin, UBYTE Value)
 #elif USE_WIRINGPI_LIB
     digitalWrite(Pin, Value);
 #elif USE_LGPIO_LIB
-    lgGpioWrite(getGpioHandle(Pin), Pin, Value);
+    lgGpioWrite(getGpioHandle(Pin), getGpioInternalPin(Pin), Value);
 #elif USE_GPIOD_LIB
     GPIOD_Write(Pin, Value);
 #endif
@@ -68,10 +95,11 @@ UBYTE DEV_Digital_Read(UWORD Pin)
 #elif USE_WIRINGPI_LIB
     Read_value = digitalRead(Pin);
 #elif USE_LGPIO_LIB
-    Read_value = lgGpioRead(getGpioHandle(Pin), Pin);
+    Read_value = lgGpioRead(getGpioHandle(Pin), getGpioInternalPin(Pin));
 #elif USE_GPIOD_LIB
     Read_value = GPIOD_Read(Pin);
 #endif
+    // Debug("Pin = %d,Read = %d\r\n", Pin, Read_value);
     return Read_value;
 }
 
@@ -100,13 +128,15 @@ void DEV_GPIO_Mode(UWORD Pin, UWORD Mode)
 #elif USE_LGPIO_LIB
     if (Mode == 0 || Mode == LG_SET_INPUT)
     {
-        lgGpioClaimInput(getGpioHandle(Pin), LFLAGS, Pin);
-        // Debug("IN Pin = %d\r\n",Pin);
+        int innerPin = getGpioInternalPin(Pin);
+        lgGpioClaimInput(getGpioHandle(Pin), LFLAGS, innerPin);
+        // Debug("IN Pin = %d\r\n", Pin);
     }
     else
     {
-        lgGpioClaimOutput(getGpioHandle(Pin), LFLAGS, Pin, LG_LOW);
-        // Debug("OUT Pin = %d\r\n",Pin);
+        int innerPin = getGpioInternalPin(Pin);
+        lgGpioClaimOutput(getGpioHandle(Pin), LFLAGS, innerPin, LG_LOW);
+        // Debug("OUT Pin = %d\r\n", Pin);
     }
 #elif USE_GPIOD_LIB
     if (Mode == 0 || Mode == GPIOD_IN)
