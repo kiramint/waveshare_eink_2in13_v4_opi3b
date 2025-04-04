@@ -13,6 +13,23 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#ifdef USE_BCM2835_LIB
+#include <bcm2835.h>
+#elif USE_WIRINGPI_LIB
+#include <wiringPi.h>
+#include <wiringPiSPI.h>
+#include <wiringPiI2C.h>
+#include "dev_hardware_i2c.h"
+#elif USE_LGPIO_LIB
+#include <lgpio.h>
+#define LFLAGS 0
+#define NUM_MAXBUF 4
+#elif USE_GPIOD_LIB
+#include "RPI_gpiod.h"
+#include "dev_hardware_i2c.h"
+#include "dev_hardware_SPI.h"
+#endif
+
 #if USE_LGPIO_LIB
 // Kira
 int GPIO_Handle_96_127;  // Chip3
@@ -37,7 +54,7 @@ int getGpioHandle(int Pin)
     else
     {
         Debug("Get err pin: %d\r\n", Pin);
-        exit(1);
+        _exit(1);
     }
 }
 /**
@@ -56,7 +73,7 @@ int getGpioInternalPin(int Pin)
     else
     {
         Debug("Get err pin: %d\r\n", Pin);
-        exit(1);
+        _exit(1);
     }
 }
 #endif

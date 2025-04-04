@@ -53,22 +53,33 @@
 #ifndef _EPD_2IN13_V2_H_
 #define _EPD_2IN13_V2_H_
 
+// EXTERN
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #include "DEV_Config.h"
 
 // Display resolution
-#define EPD_2IN13_V2_WIDTH       122
-#define EPD_2IN13_V2_HEIGHT      250
+#define EPD_2IN13_V2_WIDTH 122
+#define EPD_2IN13_V2_HEIGHT 250
 
-#define EPD_2IN13_V2_FULL			0
-#define EPD_2IN13_V2_PART			1
+#define EPD_2IN13_V2_FULL 0
+#define EPD_2IN13_V2_PART 1
 
-void EPD_2IN13_V2_Init(UBYTE Mode);
-void EPD_2IN13_V2_Clear(void);
-void EPD_2IN13_V2_Display(UBYTE *Image);
-void EPD_2IN13_V2_DisplayPart(UBYTE *Image);
-void EPD_2IN13_V2_DisplayPartBaseImage(UBYTE *Image);
-void EPD_2IN13_V2_Sleep(void);
+    void EPD_2IN13_V2_Init(UBYTE Mode);
+    void EPD_2IN13_V2_Clear(void);
+    void EPD_2IN13_V2_Display(UBYTE *Image);
+    void EPD_2IN13_V2_DisplayPart(UBYTE *Image);
+    void EPD_2IN13_V2_DisplayPartBaseImage(UBYTE *Image);
+    void EPD_2IN13_V2_Sleep(void);
 
-void EPD_2IN13_V2_DisplayPart_Wait(UBYTE *Image);
+    void EPD_2IN13_V2_DisplayPart_Wait(UBYTE *Image);
 
+#endif
+
+// EXTERN END
+#ifdef __cplusplus
+}
 #endif

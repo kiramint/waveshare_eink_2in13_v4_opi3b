@@ -11,3 +11,9 @@
   KERNEL=="spidev*", GROUP="eink", MODE="0666"
   KERNEL=="i2c-[0-9]*", GROUP="eink", MODE="0666"
   ```
+
+* 使用时可能要连接`liblgpio`
+  ```cmake
+  find_library(LGPIO_LIB lgpio REQUIRED)
+  target_link_libraries(${PROJECT_NAME} ${LGPIO_LIB})
+  ```

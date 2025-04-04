@@ -25,29 +25,40 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 #
 ******************************************************************************/
 #ifndef __EPD_2IN9_V2_H_
 #define __EPD_2IN9_V2_H_
 
+// EXTERN
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #include "DEV_Config.h"
 
 // Display resolution
-#define EPD_2IN9_V2_WIDTH       128
-#define EPD_2IN9_V2_HEIGHT      296
+#define EPD_2IN9_V2_WIDTH 128
+#define EPD_2IN9_V2_HEIGHT 296
 
-void EPD_2IN9_V2_Init(void);
-void EPD_2IN9_V2_Clear(void);
-void EPD_2IN9_V2_Display(UBYTE *Image);
-void EPD_2IN9_V2_Display_Base(UBYTE *Image);
-void EPD_2IN9_V2_Display_Partial(UBYTE *Image);
-void EPD_2IN9_V2_Sleep(void);
+    void EPD_2IN9_V2_Init(void);
+    void EPD_2IN9_V2_Clear(void);
+    void EPD_2IN9_V2_Display(UBYTE *Image);
+    void EPD_2IN9_V2_Display_Base(UBYTE *Image);
+    void EPD_2IN9_V2_Display_Partial(UBYTE *Image);
+    void EPD_2IN9_V2_Sleep(void);
 
-void EPD_2IN9_V2_Display_Partial_Wait(UBYTE *Image);
+    void EPD_2IN9_V2_Display_Partial_Wait(UBYTE *Image);
 
-void EPD_2IN9_V2_Init_Fast(void);
-void EPD_2IN9_V2_Gray4_Init(void);
-void EPD_2IN9_V2_4GrayDisplay(UBYTE *Image);
+    void EPD_2IN9_V2_Init_Fast(void);
+    void EPD_2IN9_V2_Gray4_Init(void);
+    void EPD_2IN9_V2_4GrayDisplay(UBYTE *Image);
 
+#endif
+
+// EXTERN END
+#ifdef __cplusplus
+}
 #endif

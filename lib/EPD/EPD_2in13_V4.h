@@ -31,26 +31,35 @@
 #ifndef __EPD_2in13_V4_H_
 #define __EPD_2in13_V4_H_
 
+// EXTERN
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #include "DEV_Config.h"
 
-
 // Display resolution
-#define EPD_2in13_V4_WIDTH       122
-#define EPD_2in13_V4_HEIGHT      250
+#define EPD_2in13_V4_WIDTH 122
+#define EPD_2in13_V4_HEIGHT 250
 
-#define EPD_2IN13_V4_FULL		 0
-#define EPD_2IN13_V4_PART		 1
-#define EPD_2IN13_V4_Fast		 2
+#define EPD_2IN13_V4_FULL 0
+#define EPD_2IN13_V4_PART 1
+#define EPD_2IN13_V4_Fast 2
 
-void EPD_2in13_V4_Init(UBYTE Mode);
-void EPD_2in13_V4_Clear(void);
-void EPD_2in13_V4_Clear_Black(void);
-void EPD_2in13_V4_Display(UBYTE *Image);
-void EPD_2in13_V4_Display_Fast(UBYTE *Image);
-void EPD_2in13_V4_Display_Base(UBYTE *Image);
-void EPD_2in13_V4_Display_Partial(UBYTE *Image);
-void EPD_2in13_V4_Display_Partial_Wait(UBYTE *Image);
-void EPD_2in13_V4_Sleep(void);
+    void EPD_2in13_V4_Init(UBYTE Mode);
+    void EPD_2in13_V4_Clear(void);
+    void EPD_2in13_V4_Clear_Black(void);
+    void EPD_2in13_V4_Display(UBYTE *Image);
+    void EPD_2in13_V4_Display_Fast(UBYTE *Image);
+    void EPD_2in13_V4_Display_Base(UBYTE *Image);
+    void EPD_2in13_V4_Display_Partial(UBYTE *Image);
+    void EPD_2in13_V4_Display_Partial_Wait(UBYTE *Image);
+    void EPD_2in13_V4_Sleep(void);
 
+#endif
 
+// EXTERN END
+#ifdef __cplusplus
+}
 #endif
