@@ -17,3 +17,19 @@
   find_library(LGPIO_LIB lgpio REQUIRED)
   target_link_libraries(${PROJECT_NAME} ${LGPIO_LIB})
   ```
+
+    * 父项目引用此库`CMakeLists.txt`举例：
+  ```cmake
+  cmake_minimum_required(VERSION 3.21.0)
+  
+  set(CMAKE_CXX_STANDARD 17)
+  set(CMAKE_C_STANDARD 17)
+  
+  project(E-Paper)
+  
+  add_subdirectory(lib/waveshare_eink_2in13_v4_opi3b)
+  
+  add_executable(${PROJECT_NAME} Program.cpp)
+
+  target_link_libraries(${PROJECT_NAME} WaveshareDrivers)
+  ```
