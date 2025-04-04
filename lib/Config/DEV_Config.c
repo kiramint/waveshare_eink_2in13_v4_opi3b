@@ -43,7 +43,7 @@ int IIC_Handle;
  */
 int getGpioHandle(int Pin)
 {
-    if (Pin >= 128)
+    if (Pin >= 128 && Pin < 160)
     {
         return GPIO_Handle_128_158;
     }
@@ -54,7 +54,6 @@ int getGpioHandle(int Pin)
     else
     {
         Debug("Get err pin: %d\r\n", Pin);
-        _exit(1);
     }
 }
 /**
@@ -62,7 +61,7 @@ int getGpioHandle(int Pin)
  */
 int getGpioInternalPin(int Pin)
 {
-    if (Pin >= 128)
+    if (Pin >= 128 && Pin < 160)
     {
         return Pin - 128;
     }
@@ -73,18 +72,13 @@ int getGpioInternalPin(int Pin)
     else
     {
         Debug("Get err pin: %d\r\n", Pin);
-        _exit(1);
     }
 }
 #endif
 
 /**
- * GPIO
+ * GPIO // Move to header
  **/
-int EPD_RST_PIN;
-int EPD_DC_PIN;
-int EPD_CS_PIN;
-int EPD_BUSY_PIN;
 int IIC_Address;
 
 uint32_t fd;
@@ -191,11 +185,6 @@ void DEV_Delay_ms(UDOUBLE xms)
 
 static void DEV_GPIO_Init(void)
 {
-    EPD_RST_PIN = 118;
-    EPD_DC_PIN = 132;
-    EPD_CS_PIN = 134;
-    EPD_BUSY_PIN = 129;
-
     DEV_GPIO_Mode(EPD_RST_PIN, 1);
     DEV_GPIO_Mode(EPD_DC_PIN, 1);
     DEV_GPIO_Mode(EPD_CS_PIN, 1);

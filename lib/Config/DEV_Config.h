@@ -41,13 +41,13 @@ extern "C"
 #define INT_0 DEV_Digital_Write(INT, 0)
 #define INT_1 DEV_Digital_Write(INT, 1)
 
-    /**
-     * GPIOI config
-     **/
-    extern int EPD_RST_PIN;
-    extern int EPD_DC_PIN;
-    extern int EPD_CS_PIN;
-    extern int EPD_BUSY_PIN;
+/**
+ * GPIOI config
+ **/
+#define EPD_RST_PIN 118
+#define EPD_DC_PIN 132
+#define EPD_CS_PIN 134
+#define EPD_BUSY_PIN 129
 
     /*------------------------------------------------------------------------------------------------------*/
 
