@@ -23,6 +23,11 @@ extern "C"
         UWORD S[CT_MAX_TOUCH];
     } GT1151_Dev;
 
+    // Kira
+    GT1151_Dev *GT_GetDev_Now();
+    // Kira
+    GT1151_Dev *GT_GetDev_Old();
+
     void GT_Reset(void);
     void GT_Write(UWORD Reg, char *Data, UBYTE len);
     void GT_Read(UWORD Reg, char *Data, UBYTE len);

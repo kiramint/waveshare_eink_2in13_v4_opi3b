@@ -50,6 +50,7 @@ extern "C"
 #define EPD_BUSY_PIN 129
 
     /*------------------------------------------------------------------------------------------------------*/
+    void DEV_SetIicAddress(int addr);
 
     UBYTE DEV_ModuleInit(void);
     void DEV_ModuleExit(void);

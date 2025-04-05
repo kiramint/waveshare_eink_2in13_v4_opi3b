@@ -5,6 +5,8 @@ set(CMAKE_C_STANDARD 17)
 
 project(WaveshareDrivers)
 
+# set(CMAKE_BUILD_TYPE Release)
+
 file(GLOB SOURCES 
     "lib/Config/DEV_Config.c"
     "lib/Driver/*.c"

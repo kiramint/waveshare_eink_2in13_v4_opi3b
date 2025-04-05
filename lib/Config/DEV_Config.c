@@ -81,6 +81,11 @@ int getGpioInternalPin(int Pin)
  **/
 int IIC_Address;
 
+void DEV_SetIicAddress(int addr)
+{
+    IIC_Address = addr;
+}
+
 uint32_t fd;
 /*****************************************
                 GPIO
