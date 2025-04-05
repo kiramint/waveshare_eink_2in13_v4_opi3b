@@ -56,9 +56,8 @@ extern "C"
     void EPD_2IN9_V2_Gray4_Init(void);
     void EPD_2IN9_V2_4GrayDisplay(UBYTE *Image);
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

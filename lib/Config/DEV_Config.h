@@ -65,9 +65,9 @@ extern "C"
 
     UBYTE I2C_Write_Byte(UWORD Reg, char *Data, UBYTE len);
     UBYTE I2C_Read_Byte(UWORD Reg, char *Data, UBYTE len);
-#endif
 
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

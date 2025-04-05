@@ -64,9 +64,8 @@ extern "C"
     void DEV_HARDWARE_I2C_setSlaveAddress(uint8_t addr);
     uint8_t DEV_HARDWARE_I2C_write(const char *buf, uint32_t len);
     uint8_t DEV_HARDWARE_I2C_read(char *buf, uint32_t len);
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

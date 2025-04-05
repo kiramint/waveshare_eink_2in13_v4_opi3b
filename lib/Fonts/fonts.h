@@ -96,11 +96,10 @@ extern "C"
     }
 #endif
 
-#endif /* __FONTS_H */
-
-    /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-
 // EXTERN END
 #ifdef __cplusplus
 }
 #endif
+#endif /* __FONTS_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

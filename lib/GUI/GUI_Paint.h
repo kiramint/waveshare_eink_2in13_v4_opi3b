@@ -219,9 +219,8 @@ extern "C"
     // pic
     void Paint_DrawBitMap(const unsigned char *image_buffer);
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

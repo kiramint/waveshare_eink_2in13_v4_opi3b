@@ -30,9 +30,8 @@ extern "C"
     UBYTE ICNT_Scan(void);
     void ICNT_Init(void);
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

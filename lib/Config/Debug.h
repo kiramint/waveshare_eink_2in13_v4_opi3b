@@ -49,9 +49,8 @@ extern "C"
 #define Debug(__info, ...)
 #endif
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

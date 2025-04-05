@@ -31,9 +31,8 @@ extern "C"
     void GT_Init(void);
     void GT_Gesture(void);
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

@@ -77,9 +77,8 @@ extern "C"
 
     void EPD_2IN13_V2_DisplayPart_Wait(UBYTE *Image);
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

@@ -57,9 +57,8 @@ extern "C"
     void EPD_2in13_V4_Display_Partial_Wait(UBYTE *Image);
     void EPD_2in13_V4_Sleep(void);
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

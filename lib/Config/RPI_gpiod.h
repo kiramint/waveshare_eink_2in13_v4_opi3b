@@ -90,9 +90,8 @@ extern "C"
     int GPIOD_Read(int Pin);
     int GPIOD_Write(int Pin, int value);
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif

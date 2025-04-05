@@ -121,9 +121,8 @@ extern "C"
     int DEV_HARDWARE_SPI_CSEN(SPICSEN EN);
     int DEV_HARDWARE_SPI_Mode(SPIMode mode);
 
-#endif
-
 // EXTERN END
 #ifdef __cplusplus
 }
+#endif
 #endif
