@@ -18,7 +18,7 @@
   target_link_libraries(${PROJECT_NAME} ${LGPIO_LIB})
   ```
 
-    * 父项目引用此库`CMakeLists.txt`举例：
+* 父项目引用此库`CMakeLists.txt`举例：
   ```cmake
   cmake_minimum_required(VERSION 3.21.0)
   
